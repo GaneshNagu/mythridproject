@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+.red{
+ width:30%;
+ margin:auto;
+ display: inline-block;
+ }
+
+.bold{
+  font-weight: bold;
+}
+
+.under{
+  font-style: italic;
+}
+
+.backgr{
+
+  color:black;
+}
