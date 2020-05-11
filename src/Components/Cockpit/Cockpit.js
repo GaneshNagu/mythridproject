@@ -1,8 +1,12 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './Cockpit.css';
 
 
 const Cockpit=(props)=>{
+  useEffect(()=>{
+    console.log('[Cockpit.js] UseEffect called');
+  }
+  )
 
     let textpass = null;
 

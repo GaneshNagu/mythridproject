@@ -46,7 +46,10 @@ class App extends Component {
   }
 
 
-
+  getSnapshotBeforeUpdate(prevprops,prevstate){
+    console.log('[App.js] the getsnapshot called')
+    return this.state;
+  }
 
   shouldComponentUpdate(nextprops,nextstate){
     console.log('[App.js] shouldcomponnetupdate called');
@@ -54,8 +57,8 @@ class App extends Component {
   }
 
 
-  componentDidUpdate(prevprops,prevstate){
-    console.log('[App.js] the component did update called');
+  componentDidUpdate(prevprops,prevstate,oldstate){
+    console.log('[App.js] the component did update called',oldstate);
     }
 
 
