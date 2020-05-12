@@ -5,7 +5,10 @@ import './Cockpit.css';
 const Cockpit=(props)=>{
   useEffect(()=>{
     console.log('[Cockpit.js] UseEffect called');
-  }
+    setTimeout(()=>{
+      alert('data saved to server');
+    },1000)
+  },[props.persons]
   )
 
     let textpass = null;
