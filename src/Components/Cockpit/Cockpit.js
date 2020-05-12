@@ -5,9 +5,14 @@ import './Cockpit.css';
 const Cockpit=(props)=>{
   useEffect(()=>{
     console.log('[Cockpit.js] UseEffect called');
-    setTimeout(()=>{
+    const timer=setTimeout(()=>{
       alert('data saved to server');
     },1000)
+    return()=>{
+      console.log(timer);
+      clearTimeout(timer);
+      console.log('[cockpit.js] cleanup work  called');
+    }
   },[]
   )
 
