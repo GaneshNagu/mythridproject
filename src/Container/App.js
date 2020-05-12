@@ -21,7 +21,8 @@ class App extends Component {
       { id: "sojkdk", name: "philip", age: "26" },
       { id: "sfdwid", name: "appa", age: "24" }
     ],
-    showdivs: false
+    showdivs: false,
+    showcomponent:true
   };
   switchHandler = (newval) => {
     // alert("button clicked");
@@ -55,7 +56,9 @@ class App extends Component {
     console.log('[App.js] shouldcomponnetupdate called');
     return true;
   }
-
+  componentWillUnmount(){
+    console.log('[App.js] componentwill unmount called');
+  }
 
   componentDidUpdate(prevprops,prevstate,oldstate){
     console.log('[App.js] the component did update called',oldstate);
@@ -81,10 +84,20 @@ class App extends Component {
 
   }
 
+  
+  toggleconatiner=()=>{
+
+   const updattogl=this.state.showcomponent;
+    console.log(updattogl);
+    this.setState({showcomponent:!updattogl});
+    this.setState({showdivs:false});
+  }
+
+
 
   toggleHandler = () => {
-    const doesshow = this.state.showdivs
-    this.setState({ showdivs: !doesshow })
+    const doesshow = this.state.showdivs;
+    this.setState({ showdivs: !doesshow });
   }
 
   divdeleteHandler = (index) => {
@@ -113,6 +126,20 @@ class App extends Component {
     
     }
 
+    
+    let showcontainer=null;
+    let butname='Add DOM text'
+    
+    if(this.state.showcomponent){        
+    
+      showcontainer=(
+    <div>
+    <Cockpit persons={this.state.persons} toggle={this.toggleHandler} />
+    </div>
+    )
+    butname='remove DOM text'
+    }
+
     // <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
     //   <Person name={this.state.persons[1].name} age={this.state.persons[1].age} changed={this.nameChangehandler} click={this.switchHandler.bind(this, "killerbee")} />
     //   <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
@@ -122,8 +149,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Cockpit persons={this.state.persons} toggle={this.toggleHandler} />
-
+        <button onClick={()=>this.toggleconatiner()}>{butname}</button>
+        {showcontainer}
         {showval}
 
       </div>

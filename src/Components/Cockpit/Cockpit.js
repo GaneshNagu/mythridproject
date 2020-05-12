@@ -8,7 +8,7 @@ const Cockpit=(props)=>{
     setTimeout(()=>{
       alert('data saved to server');
     },1000)
-  },[props.persons]
+  },[]
   )
 
     let textpass = null;
