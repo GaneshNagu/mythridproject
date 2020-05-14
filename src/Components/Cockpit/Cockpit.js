@@ -5,38 +5,44 @@ import './Cockpit.css';
 const Cockpit=(props)=>{
   useEffect(()=>{
     console.log('[Cockpit.js] UseEffect called');
-    const timer=setTimeout(()=>{
+    setTimeout(()=>{
       alert('data saved to server');
     },1000)
     return()=>{
-      console.log(timer);
-      clearTimeout(timer);
       console.log('[cockpit.js] cleanup work  called');
     }
   },[]
   )
 
+  useEffect(()=>{
+    console.log('[Cockpit.js] UseEffect 2nd called');
+        return()=>{
+      console.log('[cockpit.js] cleanup 2nd work  called');
+    }
+  });
+
+
     let textpass = null;
 
     const stylepass = [];
 
-    if (props.persons.length === 2) {
+    if (props.personslength === 2) {
       stylepass.push('red');
       textpass = 'we have only two elements';
     }
 
-    if (props.persons.length === 3) {
+    if (props.personslength === 3) {
       stylepass.push('bold');
       textpass = 'we have three elements ';
     }
 
-    if (props.persons.length === 1) {
+    if (props.personslength === 1) {
       stylepass.push('under');
       textpass = "we have only 1 element"
 
     }
 
-    if (props.persons.length === 4) {
+    if (props.personslength === 4) {
       stylepass.push('backgr');
       textpass = 'we have four elements';
     }
@@ -69,4 +75,4 @@ const Cockpit=(props)=>{
 }
 
 
-export default Cockpit;
+export default React.memo(Cockpit);

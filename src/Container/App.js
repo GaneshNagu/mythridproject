@@ -131,10 +131,11 @@ class App extends Component {
     let butname='Add DOM text'
     
     if(this.state.showcomponent){        
-    
+    // persons={this.state.persons}
       showcontainer=(
     <div>
-    <Cockpit persons={this.state.persons} toggle={this.toggleHandler} />
+    <Cockpit personslength={this.state.persons.length}
+     toggle={this.toggleHandler} />
     </div>
     )
     butname='remove DOM text'
