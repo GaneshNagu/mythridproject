@@ -90,7 +90,7 @@ class App extends Component {
    const updattogl=this.state.showcomponent;
     console.log(updattogl);
     this.setState({showcomponent:!updattogl});
-    this.setState({showdivs:false});
+    // this.setState({showdivs:false});
   }
 
 

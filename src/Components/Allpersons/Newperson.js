@@ -1,19 +1,22 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Person from '../Allpersons/Person/Person';
 
 // C:\Assignments\mythridproject\src\Components\Allpersons\Person\Person.js---src\Components\Allpersons\Person\Person.js
 
-class Newperson extends Component{
+class Newperson extends PureComponent{
 
   // static getDerivedStateFromProps(props,state){
   //   console.log('[Newperson.js] getDerivedStateFromProps called');
   //   return state;
   // }
 
-  shouldComponentUpdate(nextprops,nextstate){
-    console.log('[Newperson.js] shouldcompenentupdate called');
-    return true;
-  }
+
+
+
+  // shouldComponentUpdate(nextprops,nextstate){
+  //   console.log('[Newperson.js] shouldcompenentupdate called');
+  //   return true;
+  // }
 
   getSnapshotBeforeUpdate(prevprops,prevstate){
     console.log('[Newperson.js] getsnapshotbeforeudpate called');
