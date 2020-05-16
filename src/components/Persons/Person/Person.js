@@ -21,6 +21,7 @@ const Person = (props) => {
     //         width: '450px'
     //     }
     // }
+    console.log('[person.js] has been called');
 
     return (
         // < div className="custclas" style={style}>

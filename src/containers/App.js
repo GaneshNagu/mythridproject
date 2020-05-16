@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Person from './Person/Person';
+// import Person from '../components/Persons/Person/Person';
+import Newperson from '../components/Persons/Newperson';
+import Cockpit from '../components/Cockpit/Cockpit';
+
 // import styled from 'styled-components';
 // import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('[app.js] super constructor has been called');
+  }
+
+
   state = {
     persons: [
       { id: "idhd", name: "shis", age: "28" },
@@ -27,6 +36,16 @@ class App extends Component {
     });
 
   };
+
+
+  static getDerivedStateFromProps(state, props) {
+    console.log('[App.js] get derived state rendering', props);
+    return state;
+  }
+
+  componentDidMount() {
+    console.log('[App.js] the Did mount has been called');
+  }
 
   nameChangehandler = (event, id) => {
     const personIndex = this.state.persons.findIndex(p => {
@@ -61,34 +80,28 @@ class App extends Component {
 
   render() {
 
-    const style = {
-      backgroundColor: 'Green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '10px',
-      cursor: 'pointer',
-      Margin: '30px',
-      borderRadius: '20px',
-      ':hover': {
-        border: '3px solid blue'
-      }
-    }
+    console.log('render() has been called');
 
     let showval = null;
 
     if (this.state.showdivs) {
       showval = (
         <div>
-          {this.state.persons.map((anyval, index) => {
+          <Newperson
+            persons={this.state.persons}
+            changed={this.nameChangehandler}
+            click={this.divdeleteHandler}
+
+          />
+          {/* {this.state.persons.map((anyval, index) => {
 
             return <Person name={anyval.name} age={anyval.age} key={index} changed={(event) => this.nameChangehandler(event, anyval.id)} click={this.divdeleteHandler.bind(this, index)} />
 
-          })}
+          })} */}
         </div>
 
       );
-      style.backgroundColor = 'red';
+
 
     }
 
@@ -96,37 +109,12 @@ class App extends Component {
     //   <Person name={this.state.persons[1].name} age={this.state.persons[1].age} changed={this.nameChangehandler} click={this.switchHandler.bind(this, "killerbee")} />
     //   <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
     //   <Person name={this.state.persons[3].name} age={this.state.persons[3].age} />
-    let textpass = null;
-
-    const stylepass = [];
-
-    if (this.state.persons.length === 2) {
-      stylepass.push('red');
-      textpass = 'we have only two elements';
-    }
-
-    if (this.state.persons.length === 3) {
-      stylepass.push('bold');
-      textpass = 'we have three elements ';
-    }
-
-    if (this.state.persons.length === 1) {
-      stylepass.push('under');
-      textpass = "we have only 1 element"
-
-    }
-
-    if (this.state.persons.length === 4) {
-      stylepass.push('backgr');
-      textpass = 'we have four elements';
-    }
 
 
     return (
       <div className="App">
-        <p className={stylepass}>{textpass}</p><br />
-        <button onClick={this.toggleHandler} style={style}>click to change</button>
 
+        <Cockpit persons={this.state.persons} toggle={this.toggleHandler} />
         {showval}
 
       </div>
