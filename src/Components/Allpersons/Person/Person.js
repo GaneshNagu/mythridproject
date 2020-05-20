@@ -1,4 +1,6 @@
 import React ,{Component} from 'react';
+import propTypes from 'prop-types';
+
 // import { render } from 'react-dom';
  
 // import Radium from 'radium';
@@ -45,5 +47,12 @@ class Person extends Component {
 
 
 }}
+
+Person.propTypes={
+    click:propTypes.func,
+    name:propTypes.string,
+    age:propTypes.number,
+    changed:propTypes.func
+}
 
 export default Person;

@@ -16,10 +16,10 @@ class App extends Component {
 
   state = {
     persons: [
-      { id: "idhd", name: "shis", age: "28" },
-      { id: "fdsdfdsf", name: "bird", age: "27" },
-      { id: "sojkdk", name: "philip", age: "26" },
-      { id: "sfdwid", name: "appa", age: "24" }
+      { id: "idhd", name: "shis", age: 28 },
+      { id: "fdsdfdsf", name: "bird", age: 27 },
+      { id: "sojkdk", name: "philip", age: 26 },
+      { id: "sfdwid", name: "appa", age: 24 }
     ],
     showdivs: false,
     showcomponent:true
@@ -28,10 +28,10 @@ class App extends Component {
     // alert("button clicked");
     this.setState({
       persons: [
-        { id: "idhd", name: newval, age: "28" },
-        { id: "fdsdfdsf", name: "dupliraj", age: "27" },
-        { id: "sojkdk", name: newval, age: "26" },
-        { id: "sfdwid", name: "dupliappa", age: "24" }
+        { id: "idhd", name: newval, age: 28 },
+        { id: "fdsdfdsf", name: "dupliraj", age: 27 },
+        { id: "sojkdk", name: newval, age: 26 },
+        { id: "sfdwid", name: "dupliappa", age: 24 }
       ]
     });
 
