@@ -15,6 +15,16 @@ import propTypes from 'prop-types';
 
 
 class Person extends Component {
+    constructor(props) {
+        super(props);
+        this.inputelemref = React.createRef();
+    }
+
+
+    componentDidMount() {
+        this.inputelemref.current.focus();
+    }
+
     render() {
         const custclas = {
             textAlign: 'center',
@@ -46,7 +56,10 @@ class Person extends Component {
 
                 <h1 onClick={this.props.click}>{this.props.name}</h1>
                 <p>Iam {this.props.age} years old</p>
-                <input type="text" value={this.props.name} onChange={this.props.changed} />
+                <input type="text"
+                    ref={this.inputelemref}
+                    value={this.props.name}
+                    onChange={this.props.changed} />
                 {/* <Styleddiv></Styleddiv> */}
             </Withclass>
 
