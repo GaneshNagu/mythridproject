@@ -13,10 +13,10 @@ class Newperson extends PureComponent {
 
 
 
-  shouldComponentUpdate(nextprops, nextstate) {
-    console.log('[Newperson.js] shouldcompenentupdate called');
-    return true;
-  }
+  // shouldComponentUpdate(nextprops, nextstate) {
+  //   console.log('[Newperson.js] shouldcompenentupdate called');
+  //   return true;
+  // }
 
   getSnapshotBeforeUpdate(prevprops, prevstate) {
     console.log('[Newperson.js] getsnapshotbeforeudpate called');

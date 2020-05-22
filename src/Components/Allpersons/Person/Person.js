@@ -1,11 +1,11 @@
-<<<<<<< HEAD
+
 import React, { Component } from 'react';
 import Withclass from '../../../HOC/Withclass';
 import './Person.css';
-=======
-import React ,{Component} from 'react';
+
+// import React, { Component } from 'react';
 import propTypes from 'prop-types';
->>>>>>> 9a075078db5a7e033ec37b6dbc7cf96d053f371d
+// >>>>>>> 9a075078db5a7e033ec37b6dbc7cf96d053f371d
 
 // import { render } from 'react-dom';
 
@@ -57,11 +57,11 @@ class Person extends Component {
     }
 }
 
-Person.propTypes={
-    click:propTypes.func,
-    name:propTypes.string,
-    age:propTypes.number,
-    changed:propTypes.func
+Person.propTypes = {
+    click: propTypes.func,
+    name: propTypes.string,
+    age: propTypes.number,
+    changed: propTypes.func
 }
 
 export default Person;
